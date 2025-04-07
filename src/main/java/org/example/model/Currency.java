@@ -1,6 +1,7 @@
 package org.example.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
 public class Currency {
@@ -9,8 +10,11 @@ public class Currency {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Getter
     private String code;
+    @Getter
     private String symbol;
+    @Getter
     private boolean symbolOnLeft;
 
     public Currency() {}
@@ -21,19 +25,4 @@ public class Currency {
         this.symbolOnLeft = symbolOnLeft;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public boolean isSymbolOnLeft() {
-        return symbolOnLeft;
-    }
 }

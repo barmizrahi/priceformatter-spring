@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DataInitializer {
     //runs when the app is up
+    // I choose to insert to the DB if the symbol should be on the left or on the right,
+    // for others currencies then Shekel
     @Bean
     CommandLineRunner initDatabase(CurrencyRepository repository) {
         return args -> {
