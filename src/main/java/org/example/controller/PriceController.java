@@ -22,6 +22,11 @@ public class PriceController {
         this.formatterService = formatterService;
     }
 
+    @GetMapping("/")
+    public String hello() {
+        return "Hello from Spring Boot inside Docker!";
+    }
+
     @GetMapping("/currencies")
     public List<Currency> getAllCurrencies() {
         return currencyRepository.findAll();
